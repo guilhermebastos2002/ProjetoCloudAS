@@ -19,16 +19,7 @@ public class MusicaService {
         return findMusica(id);
     }
 
-    public Musica createMusica(Musica item) throws Exception {
-
-        String owner = item.getName();
-        int numMusica = 0;
-        for (Musica musica : Musicas) {
-            if (musica.getName() == nome) {
-                numMusica++;
-            }
-        }
-
+    public Musica createMusica(Musica item) {
         MusicaService.Musicas.add(item);
         return item;
     }
@@ -40,12 +31,10 @@ public class MusicaService {
             return null;
 
 
-        Musica.remove(musicaASerAtualizada);
+        Musicas.remove(musicaASerAtualizada);
     
-        musicaASerAtualizada.setName(newMusica.getName());
-        musicaASerAtualizada.setOwner(newMusica.getOwner());
-        musicaASerAtualizada.setStatus(newMusica.getStatus());
-        musicaASerAtualizada.setDescription(newMusica.getDescription());
+        musicaASerAtualizada.setNome(newMusica.getNome());
+        musicaASerAtualizada.setArtista(newMusica.getArtista());
         
         Musicas.add(musicaASerAtualizada);
 
