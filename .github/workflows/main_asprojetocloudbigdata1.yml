@@ -30,7 +30,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: java-app
-          path: '${{ github.workspace }}/target/*.jar'
+          path: '${{ github.workspace }}/ASpcbd/ASpcbd/*.jar'
 
   deploy:
     runs-on: windows-latest
@@ -45,7 +45,7 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
-          name: ASProjetoCloudBigData1
+          name: java-app
       
       - name: Login to Azure
         uses: azure/login@v2
