@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest  
+    runs-on: windows-latest
     
     steps:
       # Verifica o código do repositório
@@ -27,6 +27,8 @@ jobs:
       # Rodar o Maven build
       - name: Build with Maven
         run: mvn clean install --no-transfer-progress
+        working-directory: C:\Users\USER\projetoCloudAS\ASpcbd\ASpcbd
+
 
 
 
