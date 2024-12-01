@@ -27,7 +27,7 @@ jobs:
       # Rodar o Maven build
       - name: Build with Maven
         run: mvn clean install --no-transfer-progress
-        working-directory: C:\Users\USER\projetoCloudAS\ASpcbd\ASpcbd
+        working-directory: ASpcbd/ASpcbd
 
 
 
