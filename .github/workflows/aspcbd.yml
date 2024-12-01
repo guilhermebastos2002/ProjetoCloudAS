@@ -1,0 +1,46 @@
+name: Deploy to Azure Web App
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+      # Verifica o código do repositório
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Configura o JDK 21
+      - name: Set up JDK 21
+        uses: actions/setup-java@v2
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_502233F86ECE4E1EA17114508C21D23F }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_810CB78E019340A28162675C1D2C3140 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_E683D53222D543D2811BF69BDEF30C20 }}
+  
+
+      # Rodar o Maven build
+      - name: Build with Maven
+        run: mvn clean install --no-transfer-progress
+
+
+      # Deploy para o Azure Web App no slot
+      - name: Deploy to Azure Web App Slot
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: ASProjetoCloudBigData1 
+          slot-name: aspcbd1  
+          package: .  
