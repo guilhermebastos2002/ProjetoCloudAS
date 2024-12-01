@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: windows-latest  
     
     steps:
       # Verifica o código do repositório
@@ -22,7 +22,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '21'
-          distribution: 'adoptopenjdk'
+          distribution: 'adoptium'
 
       # Rodar o Maven build
       - name: Build with Maven
