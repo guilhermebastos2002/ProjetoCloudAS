@@ -25,11 +25,11 @@ jobs:
           distribution: 'temurin'
 
       - name: Login to Azure
-       uses: azure/login@v2
-       with:
-        client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_502233F86ECE4E1EA17114508C21D23F }}
-        tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_810CB78E019340A28162675C1D2C3140 }}
-        subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_E683D53222D543D2811BF69BDEF30C20 }}
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_502233F86ECE4E1EA17114508C21D23F }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_810CB78E019340A28162675C1D2C3140 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_E683D53222D543D2811BF69BDEF30C20 }}
   
 
       # Rodar o Maven build
