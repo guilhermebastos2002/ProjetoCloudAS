@@ -48,7 +48,6 @@ public class MusicaService {
         if (musicaASerExcluida == null)
             return;
 
-        //Remove da lista
         Musicas.remove(musicaASerExcluida);
     }
 
