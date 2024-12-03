@@ -57,7 +57,7 @@ public class PlaylistController {
         if (playlistASerAtualizada == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
-        Playlist response = service.updatePlaylist(id, playlistASerAtualizada);
+        Playlist response = service.updatePlaylist(id, novosDados);
 
         return new ResponseEntity<>(response, HttpStatus.OK);
     }

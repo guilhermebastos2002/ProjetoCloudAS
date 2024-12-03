@@ -56,7 +56,7 @@ public class UsuarioController {
         if (usuarioASerAtualizado == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
-        Usuario response = service.updateUsuario(id, usuarioASerAtualizado);
+        Usuario response = service.updateUsuario(id, novosDados);
 
         return new ResponseEntity<>(response, HttpStatus.OK);
     }

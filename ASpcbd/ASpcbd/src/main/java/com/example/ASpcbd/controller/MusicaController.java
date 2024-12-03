@@ -59,7 +59,7 @@ public class MusicaController {
         if (musicaASerAtualizada == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
-        Musica response = service.updateMusica(id, musicaASerAtualizada);
+        Musica response = service.updateMusica(id, novosDados);
 
         return new ResponseEntity<>(response, HttpStatus.OK);
 
