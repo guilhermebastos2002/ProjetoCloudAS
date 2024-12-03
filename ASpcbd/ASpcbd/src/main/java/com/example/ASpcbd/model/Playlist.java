@@ -1,11 +1,9 @@
 package com.example.ASpcbd.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
@@ -23,5 +21,8 @@ public class Playlist {
     @NotBlank(message = "Campo criador é obrigatório.")
     private String criador;
 
-    private List<Musica> Musicas;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "musica_id")
+    private List<Musica> musicas = new ArrayList<>();
+
 }

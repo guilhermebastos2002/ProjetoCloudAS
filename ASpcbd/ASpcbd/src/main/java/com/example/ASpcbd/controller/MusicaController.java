@@ -61,7 +61,7 @@ public class MusicaController {
 
         Musica response = service.updateMusica(id, musicaASerAtualizada);
 
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(response, HttpStatus.OK);
 
     }
 
